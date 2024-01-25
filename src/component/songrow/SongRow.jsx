@@ -31,8 +31,8 @@ export default function SongRow({ data }) {
     ? data.filter(
         (item) =>
           item &&
-          item.name &&
-          item.name.toLowerCase().includes(searchQuery.toLowerCase())
+          item.songName &&
+          item.songName.toLowerCase().includes(searchQuery.toLowerCase())
       )
     : [];
 
@@ -65,7 +65,7 @@ export default function SongRow({ data }) {
       {/* Display the filtered data */}
       <div>
         {filteredData.map((item) => (
-          <div key={item.id} className="flex justify-center">
+          <div key={item.Track} className="flex justify-center">
             <div className="flex border-b-2 border-custom w-[100%px] items-center h-[60px]">
               <div className="w-100 flex">
                 <img
@@ -80,9 +80,9 @@ export default function SongRow({ data }) {
                 />
               </div>
 
-              <p className="ml-[25px] w-[475px]">{item.name}</p>
-              <p className="w-[475px]">{item.name}</p>
-              <p className="w-[115px]">{item.name}</p>
+              <p className="ml-[25px] w-[475px]">{item.songName}</p>
+              <p className="w-[475px]">{item.artistName}</p>
+              <p className="w-[115px]">{item.track}</p>
 
               <div className="w-[200px] flex">
                 <img
